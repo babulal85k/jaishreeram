@@ -7,7 +7,7 @@ const Navigation = () => {
         <>
             <div className="navigation">
                 <button>
-                    <Link to='/'>Home</Link>
+                    <p>Home</p>
                 </button>
                 <button>
                     <p>About</p>
