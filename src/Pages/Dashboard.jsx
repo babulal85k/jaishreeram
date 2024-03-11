@@ -13,7 +13,6 @@ const Dashboard = () => {
 
   return (
     <>
-      <NavBar />
       <Home />
       <h2>Dashboard</h2>
       <button onClick={handleLogout}>Logout</button>
