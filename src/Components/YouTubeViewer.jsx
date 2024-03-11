@@ -4,7 +4,7 @@ import axios from 'axios';
 const YouTubeViewer = ({ videoUrl }) => {
   const [videoId, setVideoId] = useState('');
 
-  const apiKey = 'AIzaSyCNDBdzY-Yg51mhAqJsebmnlj10R4Q8LNw'
+  const apiKey = 'AIzaSyCNDBdzY-Yg51mhAqJsebmnlj10R4Q8LNw';
 
   useEffect(() => {
     const getVideoId = async () => {
@@ -35,8 +35,8 @@ const YouTubeViewer = ({ videoUrl }) => {
     <div>
       {videoId && (
         <iframe
-          width="560"
-          height="315"
+          width="1024"
+          height="560"
           src={`https://www.youtube.com/embed/${videoId}`}
           title="YouTube video player"
           frameBorder="0"
