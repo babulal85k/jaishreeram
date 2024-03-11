@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContextProvider'; // Import AuthContext
 import NavBar from '../Pages/NavBar/NavBar';
+import Home from "./Home";
 
 const Dashboard = () => {
   const { logout } = useContext(AuthContext); // Access logout function from AuthContext
@@ -13,6 +14,7 @@ const Dashboard = () => {
   return (
     <>
       <NavBar />
+      <Home />
       <h2>Dashboard</h2>
       <button onClick={handleLogout}>Logout</button>
     </>
