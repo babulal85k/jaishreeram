@@ -1,16 +1,14 @@
 import React from 'react'
 import './App.css'
-// import AllRoutes from './Pages/AllRoutes';
-import Home from './Pages/Home';
+import AllRoutes from './Pages/AllRoutes';
 
 function App() {
 
   return (
     <>
-      <Home />
-      
+      <AllRoutes />
     </>
   )
 }
 
-export default App
+export default App;

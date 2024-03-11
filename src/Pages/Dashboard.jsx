@@ -1,25 +1,22 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../Context/AuthContextProvider";
+import React, { useContext } from 'react';
+import { AuthContext } from '../Context/AuthContextProvider'; // Import AuthContext
+import NavBar from '../Pages/NavBar/NavBar';
 
-function Dashboard() {
-    const { isAuthenticated } = useContext(AuthContext);
+const Dashboard = () => {
+  const { logout } = useContext(AuthContext); // Access logout function from AuthContext
 
-    return (
-        <>
-            {isAuthenticated ? (
-                <div>
-                    <h2> Welcome to the Dashboard </h2>
-                    {/* comment */}
-                </div>
-            ) : (
-                <div>
-                    <h2>Access Denied</h2>
-                    <p>Please login to Access the Dashboard.</p>
-                </div>
+  const handleLogout = () => {
+    logout(); // Call logout function from AuthContext
+    // Redirect user to login page or homepage after logout
+  };
 
-            )};
-        </>
-    );
+  return (
+    <>
+      <NavBar />
+      <h2>Dashboard</h2>
+      <button onClick={handleLogout}>Logout</button>
+    </>
+  );
 };
 
 export default Dashboard;

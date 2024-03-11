@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import NavBar from '../Pages/NavBar/NavBar';
 import { AuthContext } from '../Context/AuthContextProvider'; // Import AuthContext
 
-const Login = () => {
+const SignUpForm = () => {
   const { login } = useContext(AuthContext); // Access login function from AuthContext
   const [formData, setFormData] = useState({
     username: '',
+    email: '',
     password: '',
   });
 
@@ -16,14 +17,10 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user && user.username === formData.username && user.password === formData.password) {
-      login(); // Call login function from AuthContext
-      // Redirect user to dashboard or protected route
-    } else {
-      alert('Invalid username or password');
-    }
+    // Register user and save data to local storage
+    // Simulate login after registration (optional)
+    login();
+    // Redirect user to dashboard or login page
   };
 
   return (
@@ -31,11 +28,12 @@ const Login = () => {
       <NavBar />
       <form onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Username" onChange={handleInputChange} />
+        <input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
         <input type="password" name="password" placeholder="Password" onChange={handleInputChange} />
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
     </>
   );
 };
 
-export default Login;
+export default SignUpForm;

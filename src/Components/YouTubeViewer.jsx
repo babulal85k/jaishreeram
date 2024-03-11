@@ -4,11 +4,17 @@ import axios from 'axios';
 const YouTubeViewer = ({ videoUrl }) => {
   const [videoId, setVideoId] = useState('');
 
+  const apiKey = 'AIzaSyCNDBdzY-Yg51mhAqJsebmnlj10R4Q8LNw'
+
   useEffect(() => {
     const getVideoId = async () => {
       try {
-        const response = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${extractVideoId(videoUrl)}&key=AIzaSyCNDBdzY-Yg51mhAqJsebmnlj10R4Q8LNw`);
-        setVideoId(response.data.items[0].id);
+        const videoIdFromUrl = extractVideoId(videoUrl);
+        if (!videoIdFromUrl) {
+          throw new Error('Invalid YouTube video URL');
+        }
+        const response = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoIdFromUrl}&key=${apiKey}`);
+        setVideoId(videoIdFromUrl);
       } catch (error) {
         console.error('Error fetching video details:', error);
       }

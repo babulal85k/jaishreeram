@@ -1,6 +1,7 @@
 import React from "react";
 import './NavBar.css';
 import Navigation from "./Navigation";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -8,11 +9,11 @@ const NavBar = () => {
             <div className="nav-container">
                 <div className="home-container">
                     <div className="home"></div>
-                    <p className="ram">𝔍𝔞𝔦⁣𓆩 ꢺ𝖍𝖗𝖊𝖊 ᭄🆁Ą🅼</p>
+                    <Link to="/" className='ram'>𝔍𝔞𝔦⁣𓆩 ꢺ𝖍𝖗𝖊𝖊 ᭄🆁Ą🅼</Link>
                     <div className="user">
-                        <button className="login-btn">
+                        <Link to='/login' className="login-btn">
                             <div className="img">
-                                <svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60.671 60.671" xml:space="preserve">
+                                <svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 60.671 60.671" xmlSpace="preserve">
                                     <g>
                                         <g>
                                             <ellipse style={{ fill: '#010002' }} cx="30.336" cy="12.097" rx="11.997" ry="12.097" />
@@ -23,7 +24,7 @@ const NavBar = () => {
                                 </svg>
 
                             </div>
-                        </button>
+                        </Link>
                     </div>
 
                 </div>

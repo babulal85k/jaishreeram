@@ -1,0 +1,11 @@
+.videoTab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+body {
+    background-image: url('../../assets/super-cute-bal-hanuman-wallpaper-2024.jpg');
+}
